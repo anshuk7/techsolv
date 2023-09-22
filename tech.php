@@ -10,14 +10,13 @@ if(isset($_POST['name'])){
     if(!$con){
         die("connection to this database failed due to" . mysqli_connect_error());
     }
-    // echo "succesfully";
 
     $fullname = $_POST['fullname'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-    $sql = "INSERT INTO `form`.`form`(`fullname`,`phone`,`email`,`subject`,`message`)VALUES('$fullname', '$phone', '$email', '$subject', '$message', ());";
+    $sql = "INSERT INTO `form`.`form`(`fullname`,`phone`,`email`,`subject`,`message`)VALUES('$fullname', '$phone', '$email', '$subject', '$message', current_timestamp());";
 
 
     if($con->quert($sql) == true){
